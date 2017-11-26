@@ -1,0 +1,15 @@
+docker-machine start default
+docker-machine env default
+export SCRIPT=$(readlink -f "$0")
+export SCRIPTPATH=$(dirname "$SCRIPT")
+export HOST_VIRTUAL_IP=192.168.99.1
+export DISPLAY=127.0.0.1:0
+# before, run:
+# docker build . -t carndmpcquizzes
+docker run --name carndpapproject-0 --rm --privileged -dt \
+  --memory=8g \
+  -p 2224:22 \
+  -p 4567:4567 \
+  -v $SCRIPTPATH/../..:/src \
+  -e DISPLAY \
+  carndpapproject

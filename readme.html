@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); overflow: auto; background-color: rgb(250, 250, 250); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(94, 97, 110); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 111, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(94, 97, 110); border-color: rgb(209, 209, 210); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(209, 209, 210); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(209, 209, 210); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) code { color: rgb(0, 0, 0); background-color: rgb(234, 234, 235); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(0, 0, 0); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(209, 209, 210) rgb(209, 209, 210) rgb(193, 193, 194); background-color: rgb(234, 234, 235); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.markdown-preview del { text-decoration: none; position: relative; }
+.markdown-preview del::after { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview .flash:not(li) { display: block; }
+.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); overflow: auto; background-color: rgb(250, 250, 250); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(94, 97, 110); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 111, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(94, 97, 110); border-color: rgb(209, 209, 210); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(209, 209, 210); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(209, 209, 210); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(0, 0, 0); background-color: rgb(234, 234, 235); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(0, 0, 0); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(209, 209, 210) rgb(209, 209, 210) rgb(193, 193, 194); background-color: rgb(234, 234, 235); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #fafafa;
+  color: #383a42;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(56, 58, 66, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #383a42;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #526fff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #ededed;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #526fff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #9d9d9f;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #383a42;
+  background-color: #f2f2f2;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #383a42;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(255, 20, 20, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #383a42;
+}
+.comment {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.comment .markup.link {
+  color: #a0a1a7;
+}
+.entity.name.type {
+  color: #c18401;
+}
+.entity.other.inherited-class {
+  color: #50a14f;
+}
+.keyword {
+  color: #a626a4;
+}
+.keyword.control {
+  color: #a626a4;
+}
+.keyword.operator {
+  color: #383a42;
+}
+.keyword.other.special-method {
+  color: #4078f2;
+}
+.keyword.other.unit {
+  color: #986801;
+}
+.storage {
+  color: #a626a4;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #a626a4;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #383a42;
+}
+.constant {
+  color: #986801;
+}
+.constant.variable {
+  color: #986801;
+}
+.constant.character.escape {
+  color: #0184bc;
+}
+.constant.numeric {
+  color: #986801;
+}
+.constant.other.color {
+  color: #0184bc;
+}
+.constant.other.symbol {
+  color: #0184bc;
+}
+.variable {
+  color: #e45649;
+}
+.variable.interpolation {
+  color: #ca1243;
+}
+.variable.parameter {
+  color: #383a42;
+}
+.string {
+  color: #50a14f;
+}
+.string.regexp {
+  color: #0184bc;
+}
+.string.regexp .source.ruby.embedded {
+  color: #c18401;
+}
+.string.other.link {
+  color: #e45649;
+}
+.punctuation.definition.comment {
+  color: #a0a1a7;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #383a42;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #4078f2;
+}
+.punctuation.definition.bold {
+  color: #c18401;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #ca1243;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #383a42;
+}
+.support.class {
+  color: #c18401;
+}
+.support.type {
+  color: #0184bc;
+}
+.support.function {
+  color: #0184bc;
+}
+.support.function.any-method {
+  color: #4078f2;
+}
+.entity.name.function {
+  color: #4078f2;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #c18401;
+}
+.entity.name.section {
+  color: #4078f2;
+}
+.entity.name.tag {
+  color: #e45649;
+}
+.entity.other.attribute-name {
+  color: #986801;
+}
+.entity.other.attribute-name.id {
+  color: #4078f2;
+}
+.meta.class {
+  color: #c18401;
+}
+.meta.class.body {
+  color: #383a42;
+}
+.meta.method-call,
+.meta.method {
+  color: #383a42;
+}
+.meta.definition.variable {
+  color: #e45649;
+}
+.meta.link {
+  color: #986801;
+}
+.meta.require {
+  color: #4078f2;
+}
+.meta.selector {
+  color: #a626a4;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #383a42;
+}
+.meta.tag {
+  color: #383a42;
+}
+.underline {
+  text-decoration: underline;
+}
+.none {
+  color: #383a42;
+}
+.invalid.deprecated {
+  color: #000000 !important;
+  background-color: #f2a60d !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #ff1414 !important;
+}
+.markup.bold {
+  color: #986801;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #a626a4;
+}
+.markup.deleted {
+  color: #e45649;
+}
+.markup.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.markup.heading {
+  color: #e45649;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #4078f2;
+}
+.markup.link {
+  color: #a626a4;
+}
+.markup.inserted {
+  color: #50a14f;
+}
+.markup.quote {
+  color: #986801;
+}
+.markup.raw {
+  color: #50a14f;
+}
+.source.cs .keyword.operator {
+  color: #a626a4;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #696c77;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #383a42;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .link .entity {
+  color: #4078f2;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e45649;
+}
+.source.java .storage.modifier.import {
+  color: #c18401;
+}
+.source.java .storage.type {
+  color: #c18401;
+}
+.source.java-properties .meta.key-pair {
+  color: #e45649;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #383a42;
+}
+.source.js .keyword.operator {
+  color: #0184bc;
+}
+.source.js .keyword.operator.delete,
+.source.js .keyword.operator.in,
+.source.js .keyword.operator.of,
+.source.js .keyword.operator.instanceof,
+.source.js .keyword.operator.new,
+.source.js .keyword.operator.typeof,
+.source.js .keyword.operator.void {
+  color: #a626a4;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #50a14f;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #0184bc;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #a626a4;
+}
+.source.python .variable.parameter {
+  color: #986801;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="self-driving-car-engineer-project-11-path-planning">Self Driving Car Engineer Project 11 - Path Planning</h1>
+<h2 id="benjamin-s-llner-25-nov-2017">Benjamin Söllner, 25 Nov 2017</h2>
+<hr>
+<p><img src="H:\Dokumente\GitHub\CarND_11_PathPlanning\project_carnd_11_path_planning_400.png" alt="Fun Project Header Image"></p>
+<hr>
+<p><img src="H:\Dokumente\GitHub\CarND_11_PathPlanning\images\screenshot.png" alt="Screenshot of Car Driving On the Highway on a Predicted Path"></p>
+<p>In this C++ project the goal is to safely navigate around a virtual highway with
+other traffic that is driving +/- 10 mph of the 50 mph speed limit. The simulator
+that drives the car is providing the path planner the car&#39;s localization and
+sensor fusion data; there is also a sparse map list of waypoints around the
+highway.</p>
+<p>The car should try to go as close as possible to the 50 mph speed limit, which
+means passing slower traffic when possible, however, other cars will try to
+change lanes too. The car should avoid hitting other cars at all cost as well
+as driving inside of the marked road lanes at all times, unless going from one
+lane to another. The car should be able to make one complete loop around the
+6946m highway. Since the car is trying to go 50 mph, it should take a little
+over 5 minutes to complete 1 loop. Also the car should not experience total
+acceleration over 10 m/s^2 and jerk that is greater than 50 m/s^3.</p>
+<p><a href="https://youtu.be/gIHYBOWJqXw"><img src="http://img.youtube.com/vi/gIHYBOWJqXw/0.jpg" alt="The video thumbnail"></a></p>
+<h2 id="reflection">Reflection</h2>
+<p>In the following subsections, I will first describe the path generation method
+in more detail and then address how I managed to pass each rubric point in order
+to avoid any &quot;incidents&quot;, as classified by the simulator, over the 4.32 mile
+long track.</p>
+<h3 id="general-path-generation-model-documentation">General Path Generation Model Documentation</h3>
+<p>The path generation model follows the <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/27800789-bc8e-4adc-afe0-ec781e82ceae/lessons/23add5c6-7004-47ad-b169-49a5d7b1c1cb/concepts/3bdfeb8c-8dd6-49a7-9d08-beff6703792d">project walkthrough</a>
+by Udacity. The following steps are applied (all line references in relationship
+to <code>main.cpp</code>):</p>
+<ol>
+<li><p>ll. 248-340: All cars from the sensor fusion data are examined and we are
+performing a high-level decision whether changing lanes (<code>my_ref_lane</code>) or
+changing speed (<code>my_ref_speed</code>). Influencing the cars decision are:</p>
+<ul>
+<li>Is there any car in front of us so we have to change lanes or slow down.
+(<code>bool change_lanes_or_slow_down</code>)</li>
+<li>Are there cars obstructing the right or left lanes so we cannot change
+lanes and <em>must</em> slow down? This also includes cars that are switching lanes
+and thusly have a horizontal velocity component in Frenet space.
+(<code>bool dont_go_left</code> and <code>bool dont_go_right</code>)</li>
+<li>Also, we do not change lanes if we are already in a right-most or left-most
+lane; we also don&#39;t perform a double-lane-change (checking <code>changing_lanes</code>)
+or a lange change below 20mph.</li>
+</ul>
+</li>
+<li><p>ll. 342-404: A spline is constructed to sample new trajectory points from</p>
+<ul>
+<li>Its first control points are the last two points of the non-processed/remaining
+path that is returned by the simulator.</li>
+<li>If currently no points were returned by the simulator, it starts with the
+current vehicle position.</li>
+<li>To that, 3 more control points with distance 30, 60 and 90m ahead of the
+last point in Frenet space are added. (ll. 380-386)</li>
+<li>The spline control points are transformed to vehicle coordinates with x
+pointing ahead, so that the spline is a well-defined function with unique
+x-to-y resolution for all x. (ll. 393-400)</li>
+</ul>
+</li>
+<li><p>ll. 406-443: The spline is sampled to return the trajectory points that the
+path should follow.</p>
+<ul>
+<li>The spline is first filled with the points that were returned from the
+simulator and were not processed yet (ll. 410-414)</li>
+<li>The spline is always sampled up to 30m ahead (<code>target_x_car</code>, ll. 419).</li>
+<li>The number of points that are sampled (and the distance between the sampled
+points) is determined by the reference velocity, so that the car covers the
+correct distance between each trajectory point of which one is passed every 0.2s.   </li>
+</ul>
+</li>
+</ol>
+<p>In the following subsections I go into detail about the nuances in the code
+that make me pass each aspect of the rubric requirement of &quot;no incident occuring&quot;.</p>
+<h3 id="driving-according-to-speed-limit">Driving According to Speed Limit</h3>
+<ul>
+<li>The speed limit is checked first in (1.) (see above) by only increasing the
+reference velocity if the speed limit is not reached (see ll. 337 ff.):<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span>}&nbsp;</span><span class="keyword control c"><span>else</span></span><span>&nbsp;</span><span class="keyword control c"><span>if</span></span><span>&nbsp;(my_ref_vel&nbsp;&lt;&nbsp;</span><span class="constant numeric c"><span>49.5</span></span><span>)&nbsp;</span><span class="meta block c"><span class="punctuation section block begin c"><span>{</span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="punctuation whitespace comment leading cpp"><span>&nbsp;</span></span><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;if&nbsp;we&nbsp;are&nbsp;too&nbsp;slow,&nbsp;speed&nbsp;up&nbsp;(obeying&nbsp;max.&nbsp;accell.&nbsp;&amp;&nbsp;velocity)</span><span>&nbsp;</span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span>&nbsp;my_ref_vel&nbsp;+=&nbsp;.</span><span class="constant numeric c"><span>224</span></span><span>;</span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="punctuation section block end c"><span>}</span></span></span></span></div></pre>
+</li>
+<li>In order to obey the reference velocity, the distance and number of data
+points sampled along the spline in (3.) (see above) is dependent on the
+reference velocity (see ll. 424f.):<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;calculate&nbsp;spacing&nbsp;of&nbsp;points&nbsp;needed&nbsp;to&nbsp;find&nbsp;reference&nbsp;velocity</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source cpp"><span class="storage type c"><span>double</span></span><span>&nbsp;num_points&nbsp;=&nbsp;target_dist&nbsp;/&nbsp;(.</span><span class="constant numeric c"><span>02</span></span><span>*my_ref_vel/</span><span class="constant numeric c"><span>2.24</span></span><span>);</span></span></div></pre>
+</li>
+</ul>
+<h3 id="obeying-maximum-acceleration-and-jerk">Obeying Maximum Acceleration and Jerk</h3>
+<ul>
+<li>Maximum acceleration and jerk are obeyed by only increasing and decreasing
+the velocity in small increments in (1.) (see above) (see ll. 329 + 339):<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span>my_ref_vel&nbsp;-=&nbsp;.</span><span class="constant numeric c"><span>224</span></span><span>;</span></span></div><div class="line"><span class="source cpp"><span>[...]</span></span></div><div class="line"><span class="source cpp"><span>my_ref_vel&nbsp;+=&nbsp;.</span><span class="constant numeric c"><span>224</span></span><span>;</span></span></div></pre>
+</li>
+<li>Even then, some exceeding jerk and acceleration can happen if a lane change
+across multiple lanes occured. In order to register whether we are changing
+lanes, in (1.) (see above), we compare the current lane, derived from the car&#39;s
+d-value (0..4m for lane 0, 4..8m for lane 1 etc., see ll. 263) ...<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span class="storage type c"><span>short</span></span><span>&nbsp;my_lane&nbsp;=&nbsp;((</span><span class="storage type c"><span>short</span></span><span>)floor(my_d/</span><span class="constant numeric c"><span>4</span></span><span>));</span></span></div></pre>
+... with the car&#39;s reference lane (<code>my_ref_lane</code>), that is kept as a state
+between request-reply cycles. We then set <code>changing_lane</code> (ll. 264) ...<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span class="storage type c"><span>bool</span></span><span>&nbsp;changing_lanes&nbsp;=&nbsp;(my_lane&nbsp;!=&nbsp;my_ref_lane);</span></span></div></pre>
+... and use it as a flag to prevent double-lane-changes</li>
+</ul>
+<h3 id="avoiding-collisions">Avoiding Collisions</h3>
+<p>This was by far the most challenging requirement and is currently probably
+implemented rather conservatively, leading to some slow-downs where speeding up
+and snugly fitting into a gap could probably improve performance. It was mostly
+handled by the policy implented in (1.) (see above).</p>
+<p>We <code>change_lanes_or_slow_down</code> (<code>== true</code>) if any car is currently ahead
+of us. But in order to make the final decision which of the two options it is,
+we also account for the following high-level observations:</p>
+<ul>
+<li>We check if the right lane or left lane is free of traffic (<code>dont_go_right</code>,
+<code>dont_go_left</code>)</li>
+<li>We also do not double-change lanes  (<code>changing_lane</code>, see also previous
+section)</li>
+<li>We do not change lanes if our speed is below 20mph.</li>
+</ul>
+<p>See also ll. 323ff.:</p>
+<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;if&nbsp;car&nbsp;too&nbsp;close&nbsp;is&nbsp;in&nbsp;front&nbsp;of&nbsp;car</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source cpp"><span class="keyword control c"><span>if</span></span><span>&nbsp;(change_lanes_or_slow_down)&nbsp;</span><span class="meta block c"><span class="punctuation section block begin c"><span>{</span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="punctuation whitespace comment leading cpp"><span>&nbsp;&nbsp;</span></span><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;if&nbsp;we&nbsp;are&nbsp;already&nbsp;changing&nbsp;lanes&nbsp;or&nbsp;cannot&nbsp;change</span><span>&nbsp;</span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span>&nbsp;&nbsp;</span><span class="keyword control c"><span>if</span></span><span>&nbsp;(changing_lanes&nbsp;||&nbsp;(dont_go_left&nbsp;&amp;&amp;&nbsp;dont_go_right)&nbsp;||&nbsp;my_ref_vel&nbsp;&lt;&nbsp;</span><span class="constant numeric c"><span>20</span></span><span>)&nbsp;</span><span class="meta block c"><span class="punctuation section block begin c"><span>{</span></span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="meta block c"><span class="punctuation whitespace comment leading cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;slow&nbsp;down&nbsp;instead&nbsp;(obeying&nbsp;max.&nbsp;accell.&nbsp;&amp;&nbsp;velocity)</span><span>&nbsp;</span></span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="meta block c"><span class="punctuation whitespace comment leading cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;[...]</span><span>&nbsp;</span></span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="meta block c"><span>&nbsp;&nbsp;</span><span class="punctuation section block end c"><span>}</span></span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="punctuation whitespace comment leading cpp"><span>&nbsp;&nbsp;</span></span><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;[...]</span><span>&nbsp;</span></span></span></span></div><div class="line"><span class="source cpp"><span class="meta block c"><span class="punctuation section block end c"><span>}</span></span></span></span></div></pre>
+<p>To derive the variables <code>change_lanes_or_slow_down</code>, <code>dont_go_left</code> and
+<code>dont_go_right</code>, from the low-level sensor fusion data of each car on the
+road, more and more high-level features are generated:</p>
+<p>First, position in <em>x</em>/<em>y</em> + <em>d</em>/<em>s</em> and velocity are extracted from the inputs
+(<code>o_x</code>, <code>o_y</code>, <code>o_y</code>, <code>o_d</code>, <code>o_vx</code>, <code>o_vy</code>, <code>o_s</code>). Based on that
+<strong>longtudinal</strong> and <strong>lateral</strong> features are derived</p>
+<p><strong>Longitudinal</strong>: First we infer if the car is closer than 30m ahead (<code>o_is_ahed</code>),
+closer than 15m behind (<code>o_is_behind</code>) or just in an &quot;inner circle&quot; of
+10m ahead or behind (<code>o_is_close</code>).</p>
+<p><strong>Lateral</strong>: This follows a 3-layered approach:</p>
+<ul>
+<li>Additional velocity metrics (<em>vs</em>, <em>vd</em>, <em>v</em>) are calculated by trigonometry
+(<code>o_vd</code>, <code>o_vs</code>, <code>o_v</code>), out of this &quot;falls&quot; also a feature that tells
+us, if the car is slower than us (<code>o_is_slower</code>).</li>
+<li>The car&#39;s lane (<code>o_lane</code>) is calculated from its <em>d</em> value and a potential
+merge / lane-change of a car to another lane (<code>o_merging_lane</code>) is inferred
+by a significant <em>vd</em> value.</li>
+<li>Based on <code>o_lane</code> and <code>o_merging_lane</code>, the high-level flags that
+specify if a car is on my lane or the lanes next to me are set
+(<code>o_is_in_my_lane</code>, <code>o_is_left</code>, <code>o_is_right</code>).</li>
+</ul>
+<p><strong>Combining both</strong>: Both are then combined to determine if a car is an obstacle
+for a lane change (ll. 314ff.):</p>
+<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span class="storage type c"><span>bool</span></span><span>&nbsp;o_is_obstacle&nbsp;=&nbsp;(&nbsp;(o_is_ahead&nbsp;&amp;&amp;&nbsp;o_is_slower)</span></span></div><div class="line"><span class="source cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;(o_is_behind&nbsp;&amp;&amp;&nbsp;!o_is_slower)</span></span></div><div class="line"><span class="source cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;o_is_close</span></span></div><div class="line"><span class="source cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></span></div><div class="line"><span class="source cpp"><span class="comment line double-slash cpp"><span class="punctuation definition comment cpp"><span>//</span></span><span>&nbsp;don&#39;t&nbsp;switch&nbsp;lanes&nbsp;if&nbsp;the&nbsp;car&nbsp;is&nbsp;dangerous</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source cpp"><span>dont_go_left&nbsp;&nbsp;=&nbsp;dont_go_left&nbsp;||&nbsp;(o_is_left&nbsp;&amp;&amp;&nbsp;o_is_obstacle);</span></span></div><div class="line"><span class="source cpp"><span>dont_go_right&nbsp;=&nbsp;dont_go_right&nbsp;||&nbsp;(o_is_right&nbsp;&amp;&amp;&nbsp;o_is_obstacle);</span></span></div></pre>
+<p>As indicated initially, I admit that this approach is far from perfect.
+Especially the heuristic, that tries to guess whether a car is changing lanes
+(<code>o_merging_lane</code>) sometimes fails. It seems that <code>o_vd</code>, which is
+calculated relying on the normal vector of the closest waypoint, is inaccurate,
+leading sometimes (especially in curves) to predictions of &quot;phantom lane changes&quot;
+of other cars. A resolution would probably be to find a more accurate normal
+vector by sampling between two waypoints or by finding a better heuristic,
+potentially involving tracking of cars over various simulator cycles.</p>
+<h3 id="staying-inside-reference-lane">Staying Inside Reference Lane</h3>
+<p>Staying inside the reference lane is achieved by keeping <em>d</em> constant in the
+interpolation of the target trajectory in (3.) (see above) (ll. 382f.):</p>
+<pre class="editor-colors lang-c++"><div class="line"><span class="source cpp"><span>&nbsp;&nbsp;vector&lt;</span><span class="storage type c"><span>double</span></span><span>&gt;&nbsp;controlpoint&nbsp;=&nbsp;getXY(my_s+spacing,&nbsp;(</span><span class="constant numeric c"><span>2</span></span><span>+</span><span class="constant numeric c"><span>4</span></span><span>*my_ref_lane),</span></span></div><div class="line"><span class="source cpp"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map_waypoints_s,&nbsp;map_waypoints_x,&nbsp;map_waypoints_y);</span></span></div></pre>
+<p>The <em>d</em> value is set to the value <code>2+4*my_ref_lane</code>, whereas <code>my_ref_lane</code>
+is kept constant as a state variable between simulator runs.</p>
+<h3 id="smoothly-changing-reference-lanes">Smoothly Changing Reference Lanes</h3>
+<p>Changing lanes smoothly is achieved by modifying <code>my_ref_lane</code>. Since always
+some portion of the previous path is kept, the spline interpolation (see previous
+subsection) between the old trajectory segment and the new segment, now with
+updated <code>my_ref_lane</code>, results in a smooth trajectory. Lane changes (i.e.,
+increments / decrements of <code>my_ref_lane</code> are only performed after
+preliminary safety checks (see &quot;Avoiding Collisions&quot;).</p>
+<h2 id="environment">Environment</h2>
+<h3 id="interfaces">Interfaces</h3>
+<h4 id="data-in-data-highway_map-txt-">Data in <code>data/highway_map.txt</code></h4>
+<p>Each waypoint in the list contains  [<em>x</em>,<em>y</em>,<em>s</em>,<em>dx</em>,<em>dy</em>] values. x and y are
+the waypoint&#39;s map coordinate position, the s value is the distance along the
+road to get to that waypoint in meters, the dx and dy values define the unit
+normal vector pointing outward of the highway loop.
+The highway&#39;s waypoints loop around so the frenet s value, distance along the
+road, goes from 0 to 6945.554.</p>
+<h4 id="websocket-interfaces-between-simulator-and-path-planner">WebSocket Interfaces between Simulator and Path Planner</h4>
+<ul>
+<li>Main car&#39;s localization data (no noise):<ul>
+<li><code>[&quot;x&quot;]</code>: The car&#39;s x position in map coordinates</li>
+<li><code>[&quot;y&quot;]</code>: The car&#39;s y position in map coordinates</li>
+<li><code>[&quot;s&quot;]</code>: The car&#39;s s position in frenet coordinates</li>
+<li><code>[&quot;d&quot;]</code>: The car&#39;s d position in frenet coordinates</li>
+<li><code>[&quot;yaw&quot;]</code>: The car&#39;s yaw angle in the map</li>
+<li><code>[&quot;speed&quot;]</code>: The car&#39;s speed in mph</li>
+</ul>
+</li>
+<li>Previous path data given via WebSockets from Simulator<ul>
+<li><strong>Note</strong>: Return the previous list but with processed points removed, used
+to show how far along the path has processed since last time.</li>
+<li><code>[&quot;previous_path_x&quot;]</code>: The previous list of x points previously given to
+the simulator</li>
+<li><code>[&quot;previous_path_y&quot;]</code>: The previous list of y points previously given to
+the simulator</li>
+</ul>
+</li>
+<li>Previous path&#39;s end s and d values<ul>
+<li><code>[&quot;end_path_s&quot;]</code>: The previous list&#39;s last point&#39;s frenet s value</li>
+<li><code>[&quot;end_path_d&quot;]</code>: The previous list&#39;s last point&#39;s frenet d value</li>
+</ul>
+</li>
+<li>Sensor Fusion Data, a list of all other car&#39;s attributes on the same side
+of the road (no noise):<ul>
+<li><code>[&quot;sensor_fusion&quot;]</code>: A 2d vector of cars and then that car&#39;s
+[car&#39;s unique ID, car&#39;s x position in map coordinates, car&#39;s y position in map
+coordinates, car&#39;s x velocity in m/s, car&#39;s y velocity in m/s, car&#39;s s
+position in frenet coordinates, car&#39;s d position in frenet coordinates].</li>
+</ul>
+</li>
+</ul>
+<h3 id="assumptions">Assumptions</h3>
+<ol>
+<li><p>The car uses a perfect controller and will visit every (x,y) point it
+recieves in the list every .02 seconds. The units for the (x,y) points are in
+meters and the spacing of the points determines the speed of the car. The vector
+going from a point to the next point in the list dictates the angle of the car.
+Acceleration both in the tangential and normal directions is measured along with
+the jerk, the rate of change of total Acceleration. The (x,y) point paths that
+the planner recieves should not have a total acceleration that goes over
+10 m/s^2, also the jerk should not go over 50 m/s^3. (NOTE: As this is BETA,
+these requirements might change. Also currently jerk is over a .02 second
+interval, it would probably be better to average total acceleration over 1
+second and measure jerk from that.</p>
+</li>
+<li><p>There will be some latency between the simulator running and the path planner
+returning a path, with optimized code usually its not very long maybe just 1-3
+time steps. During this delay the simulator will continue using points that it
+was last given, because of this its a good idea to store the last points you
+have used so you can have a smooth transition. <code>previous_path_x</code>, and
+<code>previous_path_y</code> can be helpful for this transition since they show the
+last points given to the simulator controller with the processed points
+already removed. I returned a path that extends this previous
+path.</p>
+</li>
+</ol>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>cmake &gt;= 3.5<ul>
+<li>All OSes: <a href="https://cmake.org/install/">click here for installation instructions</a></li>
+</ul>
+</li>
+<li>make &gt;= 4.1<ul>
+<li>Linux: make is installed by default on most Linux distros</li>
+<li>Mac: <a href="https://developer.apple.com/xcode/features/">install Xcode command line tools to get make</a></li>
+<li>Windows: <a href="http://gnuwin32.sourceforge.net/packages/make.htm">Click here for installation instructions</a></li>
+</ul>
+</li>
+<li>gcc/g++ &gt;= 5.4<ul>
+<li>Linux: gcc / g++ is installed by default on most Linux distros</li>
+<li>Mac: same deal as make - <a href="(https://developer.apple.com/xcode/features/">install Xcode command line tools</a></li>
+<li>Windows: recommend using <a href="http://www.mingw.org/">MinGW</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/uWebSockets/uWebSockets">uWebSockets</a><ul>
+<li>Run either <code>install-mac.sh</code> or <code>install-ubuntu.sh</code>.</li>
+<li>If you install from source, checkout to commit <code>e94b6e1</code>, i.e.<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;clone&nbsp;</span><span class="markup underline link https hyperlink"><span>https://github.com/uWebSockets/uWebSockets</span></span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>cd&nbsp;uWebSockets</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;e94b6e1</span></span></span></div></pre></li>
+</ul>
+</li>
+<li>Simulator: You can download the Term3 Simulator which contains the Path
+Planning Project from the <a href="https://github.com/udacity/self-driving-car-sim/releases">releases tab</a>.</li>
+</ul>
+<h3 id="includes">Includes</h3>
+<ul>
+<li>A really helpful resource for doing this project and creating smooth
+trajectories was using <a href="http://kluge.in-chemnitz.de/opensource/spline/">http://kluge.in-chemnitz.de/opensource/spline/</a>, the
+spline function is in a single hearder file is really easy to use.</li>
+</ul>
+<h3 id="development-environment">Development Environment</h3>
+<p>I used a combination of Windows 10 Home + Docker (with Boot2Docker in Virtual Box) running GNU Build tools + Netbeans with Remote Debugging.</p>
+<p>If this is the setup you want to use, there are some ressources to get started in the <code>ide_profiles/netbeans-win10-docker</code> folder. The docker container set up there even allows for X11 forwarding of graphics produced by matplotlib!</p>
+<h3 id="building">Building</h3>
+<ol>
+<li>Clone this repo.</li>
+<li>Make a build directory: <code>mkdir build &amp;&amp; cd build</code></li>
+<li>Compile: <code>cmake .. &amp;&amp; make</code></li>
+<li>Run it: <code>./path_planning</code>.</li>
+</ol>
+<h2 id="submitted-files">Submitted Files</h2>
+<ul>
+<li><a href="README.md"><code>README.md</code></a>, <a href="readme.html"><code>readme.html</code></a>: you are reading it! :)</li>
+<li><a href="src/main.cpp"><code>src/main.cpp</code></a>: Boilerplate code, code for websocket communication as
+well as path planner logic</li>
+<li><code>ide_profiles/netbeans-win10-docker</code>: some ressources to get started with a development environment based on Windows 10 Home + Docker (with Boot2Docker in Virtual Box) running GNU Build tools + Netbeans with Remote Debugging. Even includes X11 forwarding of graphics produced by matplotlib to Xming on Windows or similar.</li>
+</ul></body>
+</html>
