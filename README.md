@@ -39,7 +39,7 @@ The path generation model follows the [project walkthrough](https://classroom.ud
 by Udacity. The following steps are applied (all line references in relationship
 to ``main.cpp``):
 
-1. ll. 248-340: All cars from the sensor fusion data are examined and we are
+1. ll. 248-360: All cars from the sensor fusion data are examined and we are
 performing a high-level decision whether changing lanes (``my_ref_lane``) or
 changing speed (``my_ref_speed``). Influencing the cars decision are:
   * Is there any car in front of us so we have to change lanes or slow down.
@@ -49,25 +49,28 @@ changing speed (``my_ref_speed``). Influencing the cars decision are:
   and thusly have a horizontal velocity component in Frenet space.
   (``bool dont_go_left`` and ``bool dont_go_right``)
   * Also, we do not change lanes if we are already in a right-most or left-most
-  lane; we also don't perform a double-lane-change (checking ``changing_lanes``)
-  or a lange change below 20mph.
+  lane; we also don't perform a double-lane-change (checking ``changing_lanes``)   or a lange change below 20mph.
+  * Is the distance to the closest car in front of us in the target lane
+  greater than the distance to the car in front of us in our lane (by
+  examining ``double min_dist_left``, ``double min_dist_right`` and
+  ``double min_dist_here``).
 
-2. ll. 342-404: A spline is constructed to sample new trajectory points from
+2. ll. 362-424: A spline is constructed to sample new trajectory points from
   * Its first control points are the last two points of the non-processed/remaining
   path that is returned by the simulator.
   * If currently no points were returned by the simulator, it starts with the
   current vehicle position.
   * To that, 3 more control points with distance 30, 60 and 90m ahead of the
-  last point in Frenet space are added. (ll. 380-386)
+  last point in Frenet space are added. (ll. 400-406)
   * The spline control points are transformed to vehicle coordinates with x
   pointing ahead, so that the spline is a well-defined function with unique
-  x-to-y resolution for all x. (ll. 393-400)
+  x-to-y resolution for all x. (ll. 413-420)
 
-3. ll. 406-443: The spline is sampled to return the trajectory points that the
+3. ll. 426-463: The spline is sampled to return the trajectory points that the
 path should follow.
   * The spline is first filled with the points that were returned from the
-  simulator and were not processed yet (ll. 410-414)
-  * The spline is always sampled up to 30m ahead (``target_x_car``, ll. 419).
+  simulator and were not processed yet (ll. 430-434)
+  * The spline is always sampled up to 30m ahead (``target_x_car``, ll. 439).
   * The number of points that are sampled (and the distance between the sampled
   points) is determined by the reference velocity, so that the car covers the
   correct distance between each trajectory point of which one is passed every 0.2s.   
@@ -78,7 +81,7 @@ that make me pass each aspect of the rubric requirement of "no incident occuring
 ### Driving According to Speed Limit
 
 * The speed limit is checked first in (1.) (see above) by only increasing the
-reference velocity if the speed limit is not reached (see ll. 337 ff.):
+reference velocity if the speed limit is not reached (see ll. 357 ff.):
 ```c++
 } else if (my_ref_vel < 49.5) {
    // if we are too slow, speed up (obeying max. accell. & velocity)
@@ -87,7 +90,7 @@ reference velocity if the speed limit is not reached (see ll. 337 ff.):
 ```
 * In order to obey the reference velocity, the distance and number of data
 points sampled along the spline in (3.) (see above) is dependent on the
-reference velocity (see ll. 424f.):
+reference velocity (see ll. 444f.):
 ```c++
 // calculate spacing of points needed to find reference velocity
 double num_points = target_dist / (.02*my_ref_vel/2.24);
@@ -96,7 +99,7 @@ double num_points = target_dist / (.02*my_ref_vel/2.24);
 ### Obeying Maximum Acceleration and Jerk
 
 * Maximum acceleration and jerk are obeyed by only increasing and decreasing
-the velocity in small increments in (1.) (see above) (see ll. 329 + 339):
+the velocity in small increments in (1.) (see above) (see ll. 349 + 359):
 ```c++
 my_ref_vel -= .224;
 [...]
@@ -133,7 +136,7 @@ we also account for the following high-level observations:
 section)
 * We do not change lanes if our speed is below 20mph.
 
-See also ll. 323ff.:
+See also ll. 343ff.:
 ```c++
 // if car too close is in front of car
 if (change_lanes_or_slow_down) {
@@ -170,7 +173,7 @@ specify if a car is on my lane or the lanes next to me are set
 (``o_is_in_my_lane``, ``o_is_left``, ``o_is_right``).
 
 **Combining both**: Both are then combined to determine if a car is an obstacle
-for a lane change (ll. 314ff.):
+for a lane change (ll. 324ff.):
 ```c++
 bool o_is_obstacle = ( (o_is_ahead && o_is_slower)
                                       || (o_is_behind && !o_is_slower)
@@ -193,7 +196,7 @@ potentially involving tracking of cars over various simulator cycles.
 ### Staying Inside Reference Lane
 
 Staying inside the reference lane is achieved by keeping *d* constant in the
-interpolation of the target trajectory in (3.) (see above) (ll. 382f.):
+interpolation of the target trajectory in (3.) (see above) (ll. 402f.):
 
 ```c++
   vector<double> controlpoint = getXY(my_s+spacing, (2+4*my_ref_lane),
@@ -211,6 +214,18 @@ subsection) between the old trajectory segment and the new segment, now with
 updated ``my_ref_lane``, results in a smooth trajectory. Lane changes (i.e.,
 increments / decrements of ``my_ref_lane`` are only performed after
 preliminary safety checks (see "Avoiding Collisions").
+
+In addition to the safety checks, lane changes are only performed when they
+make sense. This includes checking via three minimum-variables which car is
+the closest car ahead in the current lane as well as in the lane to the left
+and to the right (see ll. 265, ll. 311ff. and esp. ll. 338ff.):
+
+```c++
+// don't switch lanes if leading car in target lane is closer than
+// leading car in current lane
+dont_go_left  = dont_go_left  || (min_dist_left < min_dist_here);
+dont_go_right = dont_go_right || (min_dist_right < min_dist_here);
+```
 
 ## Environment
 

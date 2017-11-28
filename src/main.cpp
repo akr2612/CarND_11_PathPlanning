@@ -171,7 +171,7 @@ int main() {
   vector<double> map_waypoints_dy;
 
   // Waypoint map to read from
-  string map_file_ = "../data/highway_map.csv";
+  string map_file_ = "../data/highway_map.csv"; 
   // The max s value before wrapping around the track back to 0
   double max_s = 6945.554;
 
@@ -262,6 +262,10 @@ int main() {
           // changing lanes -> no double-lane-changes == too high accell!
           short my_lane = ((short)floor(my_d/4));
           bool changing_lanes = (my_lane != my_ref_lane);
+          // distance of leading vehicle ahead
+          double min_dist_left = 999.0;
+          double min_dist_here = 999.0;
+          double min_dist_right = 999.0;
             
           // find unit normal vector at currernt position
           int other_waypoint_idx = NextWaypoint(my_x, my_y, my_yaw, map_waypoints_x, map_waypoints_y);
@@ -299,9 +303,20 @@ int main() {
             bool o_is_left  = (o_lane == my_ref_lane-1) || (o_merging_lane == my_ref_lane-1);
             bool o_is_right = (o_lane == my_ref_lane+1) || (o_merging_lane == my_ref_lane+1);
             // determine if car is 30m ahead, 15m behind or closer than 10m
-            bool o_is_ahead  = (o_s > my_s) && (o_s-my_s < 30);
+            double o_distance = o_s-my_s;
+            bool o_is_ahead  = (o_distance > 0.0) && (o_distance < 30.0);
             bool o_is_close  = abs(o_s-my_s) < 10;
-            bool o_is_behind = (o_s < my_s) && (my_s-o_s < 15);
+            bool o_is_behind = (o_distance < 0.0) && (o_distance > -15.0);
+            // update leading vehicle distance
+            if (o_distance > 0.0) {
+              if (o_is_in_my_lane) {
+                if (o_distance < min_dist_here) min_dist_here = o_distance;
+              } else if (o_is_left) {
+                if (o_distance < min_dist_left) min_dist_left = o_distance;
+              } else if (o_is_right) {
+                if (o_distance < min_dist_right) min_dist_right = o_distance;
+              }
+            }
             // check if car is slower
             bool o_is_slower = o_v-my_ref_vel < 0;
             // is there a car in my lane ahead of me?
@@ -320,6 +335,11 @@ int main() {
             dont_go_right = dont_go_right || (o_is_right && o_is_obstacle);
           }
 
+          // don't switch lanes if leading car in target lane is closer than
+          // leading car in current lane
+          dont_go_left  = dont_go_left  || (min_dist_left < min_dist_here);
+          dont_go_right = dont_go_right || (min_dist_right < min_dist_here);
+          
           // if car too close is in front of car
           if (change_lanes_or_slow_down) {
             // if we are already changing lanes or cannot change 
